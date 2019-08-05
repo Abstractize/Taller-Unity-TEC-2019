@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 7879772170223907622}
   - component: {fileID: 5091921932708197897}
   - component: {fileID: 5091921932708197896}
-  - component: {fileID: 5091921932708197903}
   m_Layer: 0
-  m_Name: Standard Kart
+  m_Name: Player 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3858398591306837071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.8801, z: 4.196538}
-  m_LocalScale: {x: 0.47224495, y: 0.56710523, z: 0.3973636}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6974306526242210666}
   - {fileID: 5573515460889603757}
@@ -85,24 +84,6 @@ CapsuleCollider:
   m_Height: 2.426178
   m_Direction: 2
   m_Center: {x: 0.0000000130240565, y: 0.15209398, z: 0.4031769}
---- !u!114 &5091921932708197903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3858398591306837071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83d0e90a1893dee44979e666fbf1571e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rotationSpeed: 1.25
-  car: {fileID: 3858398591306837071}
-  coll: {fileID: 0}
-  rb: {fileID: 0}
-  cam: {fileID: 0}
 --- !u!1 &8113301615611331876
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d5f8853025d944f14b3c407bd9d02188, type: 2}
+  - {fileID: 2100000, guid: bd6c78481638a4ee9915861be419c5f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
