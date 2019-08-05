@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour
     
     private void Awake()
     {
-        lookAt = GameObject.FindGameObjectWithTag("Player").transform;
+        
     }
     
     void Start()

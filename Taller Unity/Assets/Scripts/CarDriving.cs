@@ -11,33 +11,37 @@ public class CarDriving : MonoBehaviour
     // GameObject's needed
     public GameObject car;
     public Collider coll;
+    public Rigidbody rb;
 
     // Flags for drifting
     private bool driftDir = true;       // True = left || False = right
     private bool drift = false;
 
+    float horizontalMove = 0.0f;
+    public Camera cam;
+    private Vector3 camForward;
+    private Vector3 camRight;
+    Quaternion rotatePos;
+    Vector3 movePos;
+    private float run = 0.00f;
+
     private void Start()
     {
-        coll = GetComponentInChildren<Collider>();
+        rb = GetComponent<Rigidbody>();
+        coll = GetComponent<Collider>();
     }
 
     private void Update()
     {
         // Drifting Flag
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.A) && !drift && IsGrounded())
+        if (Input.GetButtonDown("Drift") && IsMoving() && !drift && IsGrounded())
         {
             drift = true;
             driftDir = true;
-            car.transform.Rotate(0.0f, -40.0f, 0.0f);
+            car.transform.Rotate(0.0f, Input.GetAxis("Horizontal") * 40.0f, 0.0f);
             car.GetComponent<Rigidbody>().velocity += new Vector3(0.0f, 3.0f, 0.0f);
         } else if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.D) && IsGrounded())
-        {
-            drift = true;
-            driftDir = false;
-            car.transform.Rotate(0.0f, 40.0f, 0.0f);
-            car.GetComponent<Rigidbody>().velocity += new Vector3(0.0f, 3.0f, 0.0f);
-        }
-        if (Input.GetKeyUp(KeyCode.Space) && drift)
+        if (Input.GetButtonUp("Drift") && drift)
         {
             drift = false;
             if (driftDir)
@@ -52,36 +56,26 @@ public class CarDriving : MonoBehaviour
 
     void FixedUpdate()
     {
+        Acc();
+        
+        
         // Movement
         if (!drift || (drift && !IsGrounded()))
         {
             // Movement and rotation (Normal)
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetButton("Accelerate"))
             {
-                transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    transform.Rotate(-transform.up * rotationSpeed);
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    transform.Rotate(transform.up * rotationSpeed);
-                }
+                run += 0.01f;
             }
-            else if (Input.GetKey(KeyCode.S))
+            else if (Input.GetButton("Brake"))
             {
-                transform.Translate(-Vector3.forward * movementSpeed * Time.deltaTime);
-
-                if (Input.GetKey(KeyCode.A))
-                {
-                    transform.Rotate(transform.up * rotationSpeed);
-                }
-                else if (Input.GetKey(KeyCode.D))
-                {
-                    transform.Rotate(-transform.up * rotationSpeed);
-                }
+                run = 0.0f;
             }
+            else if(Input.GetButtonUp("Accelerate"))
+            {
+                run -= 0.1f;
+            }
+            run = Mathf.Clamp(run, 0.0f, 2.0f);
         }
         // Movement and rotation (Drifting)
         else if (drift && IsGrounded())
@@ -95,8 +89,32 @@ public class CarDriving : MonoBehaviour
                 transform.Rotate(transform.up * rotationSpeed * 2f);
             }
         }
+        rb.MovePosition(transform.position + movePos * Time.deltaTime);
+        rb.MoveRotation(transform.rotation * rotatePos);
     }
-    
+    void Acc()
+    {
+        CamDirection();
+        horizontalMove = Input.GetAxis("Horizontal");
+        rotatePos = Quaternion.Euler(0.0f, horizontalMove * rotationSpeed, 0.0f);
+        movePos = transform.forward * movementSpeed * run;
+        
+    }
+    protected void CamDirection()
+    {
+        camForward = cam.transform.forward;
+        camRight = cam.transform.right;
+
+        camForward.y = 0;
+        camRight.y = 0;
+
+        camForward = camForward.normalized;
+        camRight = camRight.normalized;
+    }
+    public bool IsMoving()
+    {
+        return !Input.GetAxis("Horizontal").Equals(0.0f);
+    }
     public bool IsGrounded()
     {
         bool hit = Physics.Raycast(coll.bounds.center, Vector3.down, coll.bounds.extents.y + 0.1f);
