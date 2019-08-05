@@ -71,7 +71,7 @@ public class CarDriving : MonoBehaviour
             {
                 run = 0.0f;
             }
-            else if(Input.GetButtonUp("Accelerate"))
+            else
             {
                 run -= 0.1f;
             }
