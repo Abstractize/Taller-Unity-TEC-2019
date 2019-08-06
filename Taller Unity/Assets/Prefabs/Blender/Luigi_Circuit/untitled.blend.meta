@@ -6,7 +6,122 @@ ModelImporter:
   - first:
       74: 1989289236423521904
     second: Default Take
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sand_070717b
+    second: {fileID: 2100000, guid: f87b2ba1e717a064992cd098f0dbb9a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bc_kankyaku_mip
+    second: {fileID: 2100000, guid: 29a0c3c9663891c4fa53bf4b7d533ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bc_spot1
+    second: {fileID: 2100000, guid: 4a77965b703dd624090676f35d318485, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ef_rainbowRed2
+    second: {fileID: 2100000, guid: c85280aa80cb41a4b950079cd4495a4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: enkei_yama
+    second: {fileID: 2100000, guid: d74492dae6d31c94e9793d152642303d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hana
+    second: {fileID: 2100000, guid: b449f9dccd943d04f8e2a495f900f801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_EleArrowALL
+    second: {fileID: 2100000, guid: fdb1694a30fe70e4bb919ca4ce82ca51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_ami
+    second: {fileID: 2100000, guid: 0d6677e3b38e8f64eb13c49a75fffb91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_block_wall_mip
+    second: {fileID: 2100000, guid: 5f842196270cd7744b83f388102eb7c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_comp1a_070709_128x256a
+    second: {fileID: 2100000, guid: dff4b9a17fe51924787fae4bd0505ec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_kakyutest_1
+    second: {fileID: 2100000, guid: 3749fbaab00930b4ca93a290e166973d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_kinoko_mip
+    second: {fileID: 2100000, guid: cb6b3dba54bdfe4478e0e54ab65b3f04, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_kusa_kanban_mip
+    second: {fileID: 2100000, guid: 257b6515823c95a429cbc51cc05cd22d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_lake
+    second: {fileID: 2100000, guid: 55a7feaec84325047998f8cf7d7d5aa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_popAll_128x1024_mip
+    second: {fileID: 2100000, guid: 25e43ddfa7f64cc458c267b1ba5f0b0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lc_tatemonoall_071123mip_a
+    second: {fileID: 2100000, guid: 102468786e9045a4cbfaff698edb4f94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: luigi_capall_070607a
+    second: {fileID: 2100000, guid: bd74c978079036e49a8d9b5d09b878ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainROAD_all_mip
+    second: {fileID: 2100000, guid: 9fab30a94caea1140b968290c686eb2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: t_kusa_070712c
+    second: {fileID: 2100000, guid: 67b80229b8cf20049b5681b2080c6080, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: t_tree_otubo
+    second: {fileID: 2100000, guid: ebf79f3cce0405f4789d8154fb3cda16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: t_waki_070712a_mip
+    second: {fileID: 2100000, guid: 05d4827baa14a624bb8b8881b9269d8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire_174186203
+    second: {fileID: 2100000, guid: a90e3868fcc10c94db8969efcfe1f4f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: yama
+    second: {fileID: 2100000, guid: b9e480f7bc4ebaf4b8da76650a2bcbd3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
