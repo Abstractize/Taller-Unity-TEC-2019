@@ -19,7 +19,6 @@ public class Spawner : MonoBehaviour
             {
                 GameObject Cam = Instantiate(cam, Car.transform.position, this.transform.rotation);
                 Cam.GetComponent<CameraMovement>().lookAt = Car.transform;
-                Car.GetComponent<CarDriving>().cam = cam.GetComponent<Camera>();
             }
         }
         
